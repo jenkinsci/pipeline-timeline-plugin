@@ -68,7 +68,7 @@ describe('DashHeader', () => {
     it('displays the longest running stage label', () => {
         const longestStage = {
             title: 'very long stage',
-            duration: 55000,
+            duration: 186065000,
         }
         const header = shallow(
             <DashHeader longestStage={longestStage} {...defaultProps} />,
@@ -76,8 +76,7 @@ describe('DashHeader', () => {
         const label = header.find({ clickId: 'timeline longest stage' })
         expect(label.exists()).toEqual(true)
         expect(label.text()).toEqual(
-            `Longest stage: ${longestStage.title} (${longestStage.duration /
-                1000} seconds)`,
+           `Longest stage: ${longestStage.title} (2 days, 3 hours, 41 minutes, 5 seconds)`,
         )
     })
 })
